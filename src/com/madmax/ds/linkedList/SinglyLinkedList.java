@@ -98,12 +98,30 @@ public class SinglyLinkedList {
 		} else {
 			LLNode currNode = head;
 			for (int i = 1; i < position; i++) {
-				currNode =currNode.getNext();
+				currNode = currNode.getNext();
 			}
 			currNode.setNext(currNode.getNext().getNext());
 			length--;
 		}
 	}
+	/**
+	 * This method is used to get the tailNode
+	 * @return
+	 */ 
+		public LLNode getTailNode() {
+		if (head == null) {
+			return head;
+		}
+		LLNode currNode = head;
+		while (currNode.getNext() != null) {
+			currNode = currNode.getNext();
+		}
+
+		return currNode;
+
+	}
+
+	
 
 	/**
 	 * @return the length

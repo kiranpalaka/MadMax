@@ -1,7 +1,6 @@
 package com.madmax.ds.linkedList;
 
 public class SLLClient {
-
 	public static void main(String[] args) {
 		
 		SinglyLinkedList list = new SinglyLinkedList();
@@ -17,10 +16,8 @@ public class SLLClient {
 		list.insertAtStart(l2);
 		list.insertAtStart(l3);
 		list.insertAtPosition(l6, 2);
-		
 		list.insertAtPosition(l4, 2);
 		list.removeAtPosition(2);
-		
 		list.printSLL();
 		
 	}
