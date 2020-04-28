@@ -23,7 +23,29 @@ public class CircularLinkedList {
     public void insertAtEnd(SLLNode node) {
         node.setNext(head);
         tail.setNext(node);
-        tail =node;
+        tail = node;
+    }
+
+    public void deleteAtStart() {
+        if (head == null) {
+            System.out.println(" Its an empty linked List");
+        } else {
+            SLLNode new_node = head.getNext();
+            tail.setNext(new_node);
+            head = new_node;
+            length--;
+        }
+
+    }
+
+    public void deleteAtEnd() {
+        SLLNode previous = head, q = null;
+        while (previous.getNext() != head) {
+            q = previous;
+            previous = previous.getNext();
+        }
+        q.setNext(head);
+        tail = q;
     }
 
     public void printCLL() {
@@ -64,8 +86,15 @@ public class CircularLinkedList {
         CircularLinkedList list = new CircularLinkedList();
         SLLNode l1 = new SLLNode(1);
         SLLNode l2 = new SLLNode(2);
+        SLLNode l3 = new SLLNode(3);
         list.insertAtStart(l1);
         list.insertAtEnd(l2);
+        list.printCLL();
+        list.deleteAtStart();
+        list.printCLL();
+        list.insertAtEnd(l3);
+        list.printCLL();
+        list.deleteAtEnd();
         list.printCLL();
     }
 
