@@ -14,13 +14,21 @@ public class CircularLinkedList {
     }
 
     public void insertAtStart(SLLNode node) {
-        node.setNext(head);
-        tail.setNext(node);
-        head = node;
-        length++;
+        if (head == null) {
+            System.out.println(" Empty List");
+        } else {
+            node.setNext(head);
+            tail.setNext(node);
+            head = node;
+            length++;
+        }
     }
 
     public void insertAtEnd(SLLNode node) {
+        if(head== null)
+        {
+            System.out.println("Empty List");
+        }
         node.setNext(head);
         tail.setNext(node);
         tail = node;
