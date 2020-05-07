@@ -6,3 +6,4 @@ For better readability , this wiki will divided in sections like
 Linked List
 Stacks
 Queue
+[--pagea--](pagea.md)
