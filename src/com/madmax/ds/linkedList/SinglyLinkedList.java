@@ -34,6 +34,17 @@ public class SinglyLinkedList {
 
     }
 
+    public SLLNode findMiddle(SLLNode head) {
+        SLLNode sPointer = head;
+        SLLNode lPointer = head;
+        while (lPointer.getNext() != null) {
+            lPointer = lPointer.getNext().getNext();
+            sPointer = sPointer.getNext();
+        }
+        return sPointer;
+
+    }
+
     public void deleteAtPosition(int position) {
         if (position < 0)
             position = 0;
@@ -65,6 +76,21 @@ public class SinglyLinkedList {
             currNode = currNode.getNext();
         }
     }
+
+    public static boolean checkEven(SLLNode head) {
+        boolean evenCheck = false;
+        SLLNode tempPointer = head;
+        while (tempPointer != null && tempPointer.getNext() != null) {
+            tempPointer = tempPointer.getNext().getNext();
+        }
+
+        if (tempPointer == null) {
+            evenCheck = true;
+        }
+        return evenCheck;
+
+    }
+
     public void printSLL(SLLNode head) {
         SLLNode currNode = head;
         while (currNode != null) {
@@ -79,6 +105,17 @@ public class SinglyLinkedList {
 
     public int getLength() {
         return length;
+    }
+
+    static void printReverse(SLLNode head) {
+        if (head == null)
+            return;
+
+        // print list of head node
+        printReverse(head.getNext());
+
+        // After everything else is printed
+        System.out.print(head.getData() + " ");
     }
 
     public static void main(String[] args) {
@@ -97,5 +134,11 @@ public class SinglyLinkedList {
         System.out.println("Printing list after deletion");
         list.printSLL();
         list.getHead();
+
+        SLLNode middleNOde = list.findMiddle(list.getHead());
+        System.out.println("MiddleNOde:" + middleNOde.getData());
+        printReverse(list.getHead());
+        boolean check = checkEven(list.getHead());
+        System.out.println(check);
     }
 }
