@@ -65,6 +65,13 @@ public class SinglyLinkedList {
             currNode = currNode.getNext();
         }
     }
+    public void printSLL(SLLNode head) {
+        SLLNode currNode = head;
+        while (currNode != null) {
+            System.out.println(currNode.getData());
+            currNode = currNode.getNext();
+        }
+    }
 
     public SLLNode getHead() {
         return head;
@@ -89,5 +96,6 @@ public class SinglyLinkedList {
         list.deleteAtPosition(0);
         System.out.println("Printing list after deletion");
         list.printSLL();
+        list.getHead();
     }
 }
