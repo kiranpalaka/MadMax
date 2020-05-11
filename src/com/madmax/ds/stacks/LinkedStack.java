@@ -54,6 +54,17 @@ public class LinkedStack {
 
     }
 
+    public String toString()
+    {
+        String result="[";
+        SLLNode tempNode = top;
+        while(tempNode != null)
+        {   
+            result = result+ tempNode.getData()+"\t";
+            tempNode= tempNode.getNext();
+        }
+        return result+"]";
+    }
    
 
     public static void main(String[] args) {
@@ -64,6 +75,7 @@ public class LinkedStack {
 
         lStack.pop();
         System.out.println(lStack.getLength());
+        System.out.println(lStack.toString());
 
     }
 
