@@ -60,7 +60,7 @@ public class LinkedStack {
         SLLNode tempNode = top;
         while(tempNode != null)
         {   
-            result = result+ tempNode.getData()+"\t";
+            result = result+ tempNode.getData()+"  ";
             tempNode= tempNode.getNext();
         }
         return result+"]";
