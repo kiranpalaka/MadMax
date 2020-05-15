@@ -33,54 +33,50 @@ public class CustomerDTO {
     }
 
     @Override
-	public String toString() {
-		return "name=" + name + "\nage=" + age + "\naddress=" + address ;
+    public String toString() {
+        return "name=" + name + "\nage=" + age + "\naddress=" + address;
     }
-    
-    public static CustomerDTOBuilder getBUilder(){
+
+    public static CustomerDTOBuilder getBUilder() {
         return new CustomerDTOBuilder();
     }
 
-    public static class CustomerDTOBuilder{
-    private String fistName;
-    private String lastName;
-    private String address;
-    private String age;
-    private CustomerDTO customerDTO;
+    public static class CustomerDTOBuilder {
+        private String fistName;
+        private String lastName;
+        private String address;
+        private String age;
+        private CustomerDTO customerDTO;
 
-    public CustomerDTOBuilder withFirstName(String firstName)
-    {
-        this.fistName= firstName;
-        return this;
-    }
-    public CustomerDTOBuilder withLastName(String lastName)
-    {
-        this.lastName= lastName;
-        return this;
-    }
+        public CustomerDTOBuilder withFirstName(String firstName) {
+            this.fistName = firstName;
+            return this;
+        }
 
-    public CustomerDTOBuilder withBirthDay(LocalDate date)
-    {
-         this.age= Integer.toString(Period.between(date, date.now()).getYears());
-        return this;
-    }
+        public CustomerDTOBuilder withLastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
 
-    public CustomerDTOBuilder withAdddress(Address address)
-    {
-        this.address = address.getHouseNumber()+","+address.getStreetName()+","+address.getPincode();
-        return this ;
-    }
+        public CustomerDTOBuilder withBirthDay(LocalDate date) {
+            this.age = Integer.toString(Period.between(date, date.now()).getYears());
+            return this;
+        }
 
-    public CustomerDTO build()
-    {   
-        this.customerDTO= new CustomerDTO();
-        customerDTO.setName(fistName+lastName);
-        customerDTO.setAddress(address);
-        customerDTO.setAge(age);
-        return this.customerDTO;
+        public CustomerDTOBuilder withAdddress(Address address) {
+            this.address = address.getHouseNumber() + "," + address.getStreetName() + "," + address.getPincode();
+            return this;
+        }
+
+        public CustomerDTO build() {
+            this.customerDTO = new CustomerDTO();
+            customerDTO.setName(fistName + lastName);
+            customerDTO.setAddress(address);
+            customerDTO.setAge(age);
+            return this.customerDTO;
+
+        }
 
     }
-
-}
 
 }

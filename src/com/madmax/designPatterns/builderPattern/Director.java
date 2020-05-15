@@ -16,17 +16,13 @@ public class Director {
         address.setStreetName("smr");
         address.setPincode(500049);
         customer.setAddress(address);
-       CustomerDTO dto =buildBydirector(CustomerDTO.getBUilder(), customer);
+        CustomerDTO dto = buildBydirector(CustomerDTO.getBUilder(), customer);
         System.out.println(dto.toString());
     }
 
-    private static CustomerDTO buildBydirector(CustomerDTOBuilder builder, Customer customer)
-    {
-        return builder.withFirstName(customer.getFirstName())
-        .withLastName(customer.getLastName())
-        .withAdddress(customer.getAddress())
-        .withBirthDay(customer.getBirthday())
-        .build();
+    private static CustomerDTO buildBydirector(CustomerDTOBuilder builder, Customer customer) {
+        return builder.withFirstName(customer.getFirstName()).withLastName(customer.getLastName())
+                .withAdddress(customer.getAddress()).withBirthDay(customer.getBirthday()).build();
     }
-    
+
 }

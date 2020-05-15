@@ -24,7 +24,6 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    
     public Address getAddress() {
         return address;
     }
@@ -40,6 +39,5 @@ public class Customer {
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
-    
-    
+
 }
