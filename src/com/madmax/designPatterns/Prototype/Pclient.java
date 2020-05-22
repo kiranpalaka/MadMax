@@ -11,6 +11,14 @@ public class Pclient {
 
         GunMen g2= (GunMen) g1.clone();
         System.out.println(g2);
+
+
+        NormalSquad n1= new NormalSquad();
+        n1.boostUp();
+        System.out.println(n1);
+
+        NormalSquad n2= (NormalSquad)  n1.clone();
+        System.out.println(n2);
     }
     
 }
